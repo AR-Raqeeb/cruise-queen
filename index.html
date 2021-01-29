@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cruise Booking</title>
+    <!-- Fonts -->
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Buttons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet" />
+</head>
+
+<body>
+    <!--Header and Menu Section-->
+    <header class="container">
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a class="active" href="#">Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!--Booking Section-->
+    <main class="main-content container">
+
+        <div class="booking-content">
+            <h1>Cruise Queen</h1>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+        </div>
+
+
+        <div class="booking-form">
+            <h3>Book Ocean Time</h3>
+            <div class="input-group">
+                <label for="">Flying From</label>
+                <input class="inp-style" type="text" name="" placeholder="Dhaka, Bangladesh">
+            </div>
+            <div class="input-group">
+                <label for="">Flying To</label>
+                <input class="inp-style" type="text" name="" placeholder="New York, United States">
+            </div>
+            <div class="inputs">
+                <div class="input-group">
+                    <label for="">Departure</label>
+                    <input class="inp-style" type="date" name="">
+                </div>
+                <div class="input-group">
+                    <label for="">Return</label>
+                    <input class="inp-style" type="date" name="">
+                </div>
+            </div>
+            <div class="input-group f-class">
+                <div>
+                    <label for="">First Class ($150)</label>
+                    <input id="firstClassTicketCount" class="inp-style inp-width text-center" type="number" name="" value="0">
+                </div>
+                <div class="plus-minus-btn">
+                    <!-- <p>+ -</p> -->
+                    <!-- 
+                    <input id="mobileCount" type="text" class="form-control text-center" value="1"> -->
+                    <button id="firstClassTicketIncrease" class="btn btn-default"><i class="fas fa-plus"></i></button>
+                    <button id="firstClassTicketDecrease" class="btn btn-default"><i class="fas fa-minus"></i></button>
+                </div>
+            </div>
+            
+            <div class="input-group f-class">
+                <div>
+                    <label for="">Economy ($100)</label>
+                    <input id="economyClassTicketCount" class="inp-style inp-width" type="number" name="" value="0">
+                </div>
+                <div class="plus-minus-btn">
+                    <!-- <p> <span>+</span> <span>-</span> </p> -->
+                    <button id="economyClassTicketIncrease" class="btn btn-default"><i class="fas fa-plus"></i></button>
+                    <button id="economyClassTicketDecrease" class="btn btn-default"><i class="fas fa-minus"></i></button>
+                </div>
+            </div>
+            <div class="calculations">
+                <div class="amount">
+                    <div class="left">
+                        <h4>Subtotal</h4>
+                    </div>
+                    <div class="right">
+                        <h4 id="sub-total">$0</h4>
+                    </div>
+                </div>
+
+                <div class="amount">
+                    <div class="left">
+                        <h4>Charge 10% VAT</h4>
+                    </div>
+                    <div class="right">
+                        <h4 id="total-vat">$0</h4>
+                    </div>
+                </div>
+                <hr>
+                <div class="amount">
+                    <div class="left">
+                        <h4>Total</h4>
+                    </div>
+                    <div class="right">
+                        <h4 id="grand-total">$0</h4>
+                    </div>
+                </div>
+            </div>
+            <button class="btn-style">Book Now</button>
+        </div>
+    </main>
+
+</body>
+
+<!-- making the site responsive -->
+<script>
+    // working with first class ticket section
+    // first the plus button
+    document.getElementById("firstClassTicketIncrease").addEventListener("click", function(){
+        const firstClassTicket = document.getElementById("firstClassTicketCount");
+        const firstClassTicketCount = parseInt(firstClassTicket.value);
+        const updatedFirstClassTicketCount = firstClassTicketCount + 1;
+        firstClassTicket.value = updatedFirstClassTicketCount;
+        const subTotal = updatedFirstClassTicketCount * 150;
+        document.getElementById("sub-total").innerText = '$' + subTotal;
+
+        console.log("now the input box value is ", updatedFirstClassTicketCount);
+        
+    })
+</script>
+</html>
