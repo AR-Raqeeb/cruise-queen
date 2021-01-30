@@ -107,13 +107,6 @@ nav ul li a:hover, a.active{
     margin: 10px 5px 0px 0px;
     word-spacing: 20px;
 }
-/* .plus-minus-btn{
-    color: #3352F2;
-    font-size: 30px;
-    padding: 2px;
-    margin: 10px 5px 0px 0px;
-    word-spacing: 20px;
-} */
 .booking-form .inputs{
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -147,7 +140,6 @@ nav ul li a:hover, a.active{
     text-align: center;
     margin: 220px;
     background-image: url("images/message-background.jpg");
-    /* height: 500px; */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

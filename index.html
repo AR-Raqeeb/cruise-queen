@@ -128,7 +128,7 @@
 <script>
     // working with ticket counter section
 
-    // first the first-class plus button
+    // First, the first-class plus button
     document.getElementById("firstClassTicketIncrease").addEventListener("click", function() {
         const firstClassTicket = document.getElementById("first-class-ticket-count");
         const firstClassTicketCount = parseInt(firstClassTicket.value);
@@ -139,7 +139,7 @@
         totalCost(updatedFirstClassTicketCount, economyClassTicketCount);
     })
 
-    // now the first-class minus button
+    // Now, the first-class minus button
     document.getElementById("firstClassTicketDecrease").addEventListener("click", function() {
         const firstClassTicket = document.getElementById("first-class-ticket-count");
         const firstClassTicketCount = parseInt(firstClassTicket.value);
@@ -154,7 +154,7 @@
         totalCost(updatedFirstClassTicketCount, economyClassTicketCount);
     })
 
-    // now the economy-class plus button
+    // Then, the economy-class plus button
     document.getElementById("economyClassTicketIncrease").addEventListener("click", function() {
         const economyClassTicket = document.getElementById("economy-class-ticket-count");
         const economyClassTicketCount = parseInt(economyClassTicket.value);
@@ -165,7 +165,7 @@
         totalCost(updatedFirstClassTicketCount, updatedEconomyClassTicketCount);
     })
 
-    // lastly the economy-class minus button
+    // Lastly, the economy-class minus button
     document.getElementById("economyClassTicketDecrease").addEventListener("click", function() {
         const economyClassTicket = document.getElementById("economy-class-ticket-count");
         const economyClassTicketCount = parseInt(economyClassTicket.value);
@@ -175,7 +175,6 @@
         if (economyClassTicketCount > 0) {
             updatedEconomyClassTicketCount = economyClassTicketCount - 1;
         }
-        //const updatedFirstClassTicketCount = firstClassTicketCount - 1;
         economyClassTicket.value = updatedEconomyClassTicketCount;
         totalCost(updatedFirstClassTicketCount, updatedEconomyClassTicketCount);
     })
@@ -189,7 +188,7 @@
         document.getElementById("grand-total").innerText = grandTotal;
     }
 
-    //working with book now button
+    // Making the "Book Now" button responsive
     document.getElementById("book-now").addEventListener("click", function() {
         const bookNowBtn = document.getElementById("booking-section");
         bookNowBtn.style.display = 'none';
@@ -203,7 +202,7 @@
         bookingComplete.style.display = 'block';
     })
 
-    //working with Okay button
+    // Making the "Okay" button responsive
     document.getElementById("ok-btn").addEventListener("click", function() {
         const okayBtn = document.getElementById("booking-complete-message");
         okayBtn.style.display = 'none';
