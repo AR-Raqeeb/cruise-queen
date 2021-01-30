@@ -134,3 +134,44 @@ nav ul li a:hover, a.active{
     justify-content: space-between;
     margin-bottom: 6px;
 }
+#booking-complete-message{
+    display: none;
+}
+.book-now-clicked{
+    border: 1px solid gray;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    width: 500px;
+    height: 200px;
+    text-align: center;
+    margin: 220px;
+    background-image: url("images/message-background.jpg");
+    /* height: 500px; */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+#ok-btn{
+    display: block;
+    width: 50px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    font-weight: 500;
+    background-image: linear-gradient(45deg, lightsalmon, blue);
+    text-align: center;
+    margin-left: 210px;
+    margin-top: 50px;
+    font-size: 12px;
+}
+#congrats-message{
+    padding-bottom: 8px;
+    color: orange;
+}
+#congrats-para{
+    color: navy;
+    
+}
