@@ -32,7 +32,8 @@
 
         <div class="booking-content">
             <h1>Cruise Queen</h1>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen
+                book.</p>
         </div>
 
 
@@ -56,29 +57,31 @@
                     <input class="inp-style" type="date" name="">
                 </div>
             </div>
-            <div class="input-group f-class">
-                <div>
-                    <label for="">First Class ($150)</label>
-                    <input id="firstClassTicketCount" class="inp-style inp-width text-center" type="number" name="" value="0">
+            <div class="counter">
+                <div class="input-group f-class">
+                    <div>
+                        <label for="">First Class ($150)</label>
+                        <input id="first-class-ticket-count" class="inp-style inp-width text-center" type="number" name="" value="0">
+                    </div>
+                    <div class="plus-minus-btn">
+                        <!-- <p>+ -</p> -->
+                        <!-- 
+                            <input id="mobileCount" type="text" class="form-control text-center" value="1"> -->
+                        <button id="firstClassTicketIncrease" class="btn btn-default"><i class="fas fa-plus"></i></button>
+                        <button id="firstClassTicketDecrease" class="btn btn-default"><i class="fas fa-minus"></i></button>
+                    </div>
                 </div>
-                <div class="plus-minus-btn">
-                    <!-- <p>+ -</p> -->
-                    <!-- 
-                    <input id="mobileCount" type="text" class="form-control text-center" value="1"> -->
-                    <button id="firstClassTicketIncrease" class="btn btn-default"><i class="fas fa-plus"></i></button>
-                    <button id="firstClassTicketDecrease" class="btn btn-default"><i class="fas fa-minus"></i></button>
-                </div>
-            </div>
-            
-            <div class="input-group f-class">
-                <div>
-                    <label for="">Economy ($100)</label>
-                    <input id="economyClassTicketCount" class="inp-style inp-width" type="number" name="" value="0">
-                </div>
-                <div class="plus-minus-btn">
-                    <!-- <p> <span>+</span> <span>-</span> </p> -->
-                    <button id="economyClassTicketIncrease" class="btn btn-default"><i class="fas fa-plus"></i></button>
-                    <button id="economyClassTicketDecrease" class="btn btn-default"><i class="fas fa-minus"></i></button>
+    
+                <div class="input-group f-class">
+                    <div>
+                        <label for="">Economy Class ($100)</label>
+                        <input id="economy-class-ticket-count" class="inp-style inp-width" type="number" name="" value="0">
+                    </div>
+                    <div class="plus-minus-btn">
+                        <!-- <p> <span>+</span> <span>-</span> </p> -->
+                        <button id="economyClassTicketIncrease" class="btn btn-default"><i class="fas fa-plus"></i></button>
+                        <button id="economyClassTicketDecrease" class="btn btn-default"><i class="fas fa-minus"></i></button>
+                    </div>
                 </div>
             </div>
             <div class="calculations">
@@ -87,7 +90,7 @@
                         <h4>Subtotal</h4>
                     </div>
                     <div class="right">
-                        <h4 id="sub-total">$0</h4>
+                        <h4>$ <span id="sub-total">0</span></h4>
                     </div>
                 </div>
 
@@ -117,10 +120,11 @@
 
 <!-- making the site responsive -->
 <script>
-    // working with first class ticket section
+    // working with ticket counter section
+    
     // first the plus button
     document.getElementById("firstClassTicketIncrease").addEventListener("click", function(){
-        const firstClassTicket = document.getElementById("firstClassTicketCount");
+        const firstClassTicket = document.getElementById("first-class-ticket-count");
         const firstClassTicketCount = parseInt(firstClassTicket.value);
         const updatedFirstClassTicketCount = firstClassTicketCount + 1;
         firstClassTicket.value = updatedFirstClassTicketCount;
@@ -128,7 +132,25 @@
         document.getElementById("sub-total").innerText = '$' + subTotal;
 
         console.log("now the input box value is ", updatedFirstClassTicketCount);
-        
+
+    })
+
+    // now the minus button
+    document.getElementById("firstClassTicketDecrease").addEventListener("click", function(){
+        const firstClassTicket = document.getElementById("first-class-ticket-count");
+        const firstClassTicketCount = parseInt(firstClassTicket.value);
+        let updatedFirstClassTicketCount = 0;
+        if(firstClassTicketCount > 0){
+            updatedFirstClassTicketCount = firstClassTicketCount - 1;
+        }
+        //const updatedFirstClassTicketCount = firstClassTicketCount - 1;
+        firstClassTicket.value = updatedFirstClassTicketCount;
+        const subTotal = updatedFirstClassTicketCount * 150;
+        document.getElementById("sub-total").innerText = '$' + subTotal;
+
+        console.log("now the input box value is ", updatedFirstClassTicketCount);
+
     })
 </script>
+
 </html>
